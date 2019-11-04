@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>day-3</title>
+  <style>
+    /* 
+      知识点: 1: 伪元素: 2: linear-gradient; 3: animation; 4: transform;
+    */
+    html, body {
+      background: #0c002b;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding:0;
+      font-family: sans-serif;
+      color: #0B0974;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contrain {
+      background: rgb(44, 42, 172);
+      width: 300px;
+      height: 100px;
+      text-align: center;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      box-sizing: content-box;
+    }
+    .contrain::before {
+      position: absolute;
+      content: '';
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .contrain span {
+      position: absolute;
+      z-index: 99;
+    }
+    .contrain span:nth-child(1) {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, rgb(44, 42, 172),#1779ff);
+      animation: Animition1 1.5s linear infinite;
+      animation-delay: 0.7s;
+    }
+    .contrain span:nth-child(2) {
+      right: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, rgb(44, 42, 172),#1779ff);
+      animation: Animition2 1.5s linear infinite;
+    }
+    .contrain span:nth-child(3) {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to left, rgb(44, 42, 172),#1779ff);
+      animation: Animition3 1.5s linear infinite;
+      animation-delay: 0.7s;
+    }
+    .contrain span:nth-child(4) {
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to top, rgb(44, 42, 172),#1779ff);
+      animation: Animition4 1.5s linear infinite;
+    }
+
+    @keyframes Animition1 {
+      0% {
+        transform: translate(-100%);
+      }
+      100% {
+        transform: translate(100%);
+      }
+    }
+    @keyframes Animition2 {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+    @keyframes Animition3 {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes Animition4 {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contrain">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="content">
+      <h1>day-3</h1>
+    </div>
+  </div>
+  
+</body>
+</html>

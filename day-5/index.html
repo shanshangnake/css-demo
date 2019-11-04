@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>day-5</title>
+  <style>
+  /* 
+    知识点 1:position; 2: transition;
+   */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    font-family: sans-serif;
+  }
+  .contrain {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #33CCCC;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    border-radius: 10px;
+  }
+  .title, .content {
+    position: absolute;
+  }
+  .title {
+    background: #006363;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  .contrain:hover .title{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: none;
+    top: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="contrain">
+    <div class="title">
+      <h1>05</h1>
+    </div>
+    <div class="content">wwwwwww</div>
+  </div>
+</body>
+</html>
